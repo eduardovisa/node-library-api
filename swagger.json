@@ -14,5 +14,89 @@
     }
   ],
   "consumes": ["application/json"],
-  "produces": ["application/json"]
+  "produces": ["application/json"],
+  "paths": {
+    "/book/create": {
+      "post": {
+        "tags": ["Library"],
+        "description": "Create new book in system",
+        "parameters": [
+          {
+            "name": "book",
+            "in": "body",
+            "required": true,
+            "description": "Book that we want to create",
+            "example": {
+              "title": "Clien años de soledad",
+              "pages": 402,
+              "year": 1962,
+              "isbn": "123-456-7890-A1",
+              "author": "Gabriel García Márquez"
+            },
+            "scheme": {
+              "$ref": "#/definitionss/Book"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New book is created",
+            "example": {
+              "application/json": {
+                "status": true,
+                "message": "Book created"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/book/list": {
+      "get": {
+        "tags": ["Library"],
+        "responses": {
+          "200": {
+            "description": "All books are returned",
+            "examples": {
+              "application/json": {
+                "status": true,
+                "message": "array"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Book": {
+      "required": ["title", "pages", "year", "isbn", "author"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "uniqueItems": false,
+          "example": "Cien años de soledad"
+        },
+        "pages": {
+          "type": "integer",
+          "example": 402
+        },
+        "year": {
+          "type": "integer",
+          "example": 1972
+        },
+        "isbn": {
+          "type": "string",
+          "uniqueItems": false,
+          "example": "123-456-7890-A1"
+        },
+        "author": {
+          "type": "string",
+          "uniqueItems": false,
+          "example": "Gabriel García Márquez"
+        }
+      }
+    }
+  }
 }
