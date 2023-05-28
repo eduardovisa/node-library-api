@@ -69,15 +69,6 @@
       }
     },
     "/book/{isbn}": {
-      "parameters": [
-        {
-          "name": "isbn",
-          "in": "path",
-          "required": true,
-          "description": "Book isbn find",
-          "type": "string"
-        }
-      ],
       "get": {
         "tags": ["Book"],
         "responses": {
@@ -91,18 +82,18 @@
             }
           }
         }
-      }
-    },
-    "/book/delete/{isbn}": {
+      },
       "parameters": [
         {
           "name": "isbn",
           "in": "path",
           "required": true,
-          "description": "Book isbn to delete",
+          "description": "Book isbn find",
           "type": "string"
         }
-      ],
+      ]
+    },
+    "/book/delete/{isbn}": {
       "delete": {
         "tags": ["Book"],
         "responses": {
@@ -116,7 +107,16 @@
             }
           }
         }
-      }
+      },
+      "parameters": [
+        {
+          "name": "isbn",
+          "in": "path",
+          "required": true,
+          "description": "Book isbn to delete",
+          "type": "string"
+        }
+      ]
     },
     "/book/update": {
       "put": {
