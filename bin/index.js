@@ -9,7 +9,7 @@ const port = 3000;
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(bodyparser.json());
-app.use(routes);
+app.use('/api/v1', routes);
 
 app.listen(port, () => {
   console.log(`Server running on port: http://localhost:${port}`);
