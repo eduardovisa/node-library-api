@@ -1,0 +1,16 @@
+[
+  {
+    "title": "100 años de soledad",
+    "pages": 402,
+    "year": 1962,
+    "isbn": "123-456-7890-C1",
+    "author": "Gabriel García Márquez"
+  },
+  {
+    "title": "La divina comedia",
+    "pages": 302,
+    "year": 1472,
+    "isbn": "123-456-7890-N1",
+    "author": "Dante Aliguieri"
+  }
+]
