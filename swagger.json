@@ -117,6 +117,33 @@
           }
         }
       }
+    },
+    "/book/update": {
+      "put": {
+        "tags": ["Book"],
+        "parameters": [
+          {
+            "name": "book",
+            "in": "body",
+            "required": true,
+            "description": "Book to update",
+            "schema": {
+              "$ref": "#/definitions/Book"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A book updated",
+            "examples": {
+              "application/json": {
+                "status": true,
+                "message": "Book updated"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
